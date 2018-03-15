@@ -65,7 +65,8 @@ class Game:
             if pressed[pygame.K_UP]:
                 if car.velocity.x < 0:
                     car.acceleration = car.brake_deceleration
-                car.acceleration += 1 * dt
+                else:
+                    car.acceleration += 1 * dt
             elif pressed[pygame.K_DOWN]:
                 if car.velocity.x > 0:
                     car.acceleration = -car.brake_deceleration
