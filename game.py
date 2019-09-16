@@ -1,6 +1,6 @@
 import os
 import pygame
-from math import tan, radians, degrees, copysign
+from math import sin, radians, degrees, copysign
 from pygame.math import Vector2
 
 
@@ -24,7 +24,7 @@ class Car:
         self.velocity.x = max(-self.max_velocity, min(self.velocity.x, self.max_velocity))
 
         if self.steering:
-            turning_radius = self.length / tan(radians(self.steering))
+            turning_radius = self.length / sin(radians(self.steering))
             angular_velocity = self.velocity.x / turning_radius
         else:
             angular_velocity = 0
